@@ -4,20 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Jumble</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="menu.js"></script>
-    <title>Trivia Jumble</title>
+    <script src="https://kit.fontawesome.com/4f69e1f474.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>Trivia Jumble</h1>
-    <h2>Choose what trivia catagory to play.</h2>
     <div class="container">
-        <div id="trivia-container" class="hidden"></div>
-        <div class="menu">
-            <button id="anime-btn" class="anime-btn2">Anime</button>
-            <button id="animals-btn" class="animals-btn2">Animals</button>
-            <button id="books-btn" class="books-btn2">Books</button>
-            <button id="mythical-btn" class="mythical-btn2">Mythical Creatures</button>
+    <h1>Trivia Jumble</h1>
+    <h2>Chose Among Four Quiz Categories</h2>
+        <div id="menu-buttons" class="menu">
+            <button id="sports-button" class="menu-buttons">
+                Sports <i class="fa-solid fa-baseball" style="color: #2e2e2e;"></i>
+            </button>
+            <button id="animals-button" class="menu-buttons">
+                Animals <i class="fa-solid fa-paw" style="color: #2e2e2e;"></i>
+            </button>
+            <button id="tv-shows-button" class="menu-buttons">
+                TV Shows <i class="fa-solid fa-tv" style="color: #2e2e2e;"></i>
+            </button>
+            <button id="random-button" class="menu-buttons">
+                Random <i class="fa-solid fa-brain" style="color: #2e2e2e;"></i>
+            </button>
+        </div>
+        <div class="controls">
+            <button id="home-button" class="hidden">
+                Home <i class="fa-solid fa-house" style="color: #2e2e2e;"></i>
+            </button>
+            <button id="next-button" class="hidden">
+                Next <i class="fa-solid fa-circle-right" style="color: #2e2e2e;"></i>
+            </button>
         </div>
     </div>
 </body>
