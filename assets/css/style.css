@@ -1,9 +1,11 @@
-*, *::before, *::after {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
     box-sizing: border-box;
 }
 
 body {
-    font-family: verdana, sans-serif;
+    font-family: 'montserrat', sans-serif;
     background-color: #414176;
     padding: 0;
     margin: 0;
@@ -35,7 +37,7 @@ body {
     padding-top: 10px;
 }
 
-.buttons, .hidden {
+.btns, .hidden {
     font-family: verdana, sans-serif;
     font-size: larger;
     color: #2e2e2e;
@@ -47,10 +49,14 @@ body {
 }
 
 button:hover {
-    background-color: lightcyan;
+    background-color: #C7E0F2;
     transform: scale(.75);
 }
 
 .menu {
     margin: 20px 0;
+}
+
+.hidden {
+    display: none;
 }

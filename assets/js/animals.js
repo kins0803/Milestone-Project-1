@@ -1,11 +1,17 @@
-// questions: 
-// 1)
-// 2)
-// 3)
-// 4)
-// 5)
-// 6)
-// 7)
-// 8)
-// 9)
-// 10)
+const animalsButton = document.getElementById('animals-button')
+const animalQuestionContainerElement = document.getElementById()
+
+animalsButton.addEventListener('click', startAnimalGame)
+
+function startAnimalGame() {
+    console.log('started')
+
+}
+
+function setNextAnimalQuestion() {
+
+}
+
+function selectAnimalAnswer() {
+
+}
