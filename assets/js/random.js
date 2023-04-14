@@ -1,11 +1,16 @@
-// questions: 
-// 1)
-// 2)
-// 3)
-// 4)
-// 5)
-// 6)
-// 7)
-// 8)
-// 9)
-// 10)
+const randomButton = document.getElementById('1-random')
+const randomQuestionContainerElement = document.getElementById('question-buttons')
+
+function startRandomGame() {
+
+}
+
+randomButton.addEventListener('click', startRandomGame)
+
+function setNextRandomQuestion() {
+
+}
+
+function selectRandomAnswer() {
+
+}
