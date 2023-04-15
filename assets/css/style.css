@@ -53,6 +53,14 @@ button:hover {
     transform: scale(.75);
 }
 
+.btns.correct {
+    background-color: #96D494;
+}
+
+.btns.wrong {
+    background-color: #FF6B5E;
+}
+
 .menu {
     margin: 20px 0;
 }
