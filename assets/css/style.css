@@ -1,83 +1,128 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
+
 * {
-    box-sizing: border-box;
+   box-sizing: border-box;
 }
+
 
 body {
-    font-family: 'montserrat', sans-serif;
-    background-color: #414176;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
+   font-family: 'montserrat', sans-serif;
+   background-color: #414176;
+   padding: 0;
+   margin: 0;
+   display: flex;
+   width: 100vw;
+   height: 100vh;
+   justify-content: center;
+   align-items: center;
 }
+
 
 .container {
-    width: 800px;
-    max-width: 80%;
-    background-color: whitesmoke;
-    border-radius: 5px;
-    margin: 5px;
-    padding: 10px;
-    box-shadow: 0 0 10px 2px;
-    color: #2e2e2e;
+   width: 800px;
+   max-width: 80%;
+   background-color: whitesmoke;
+   border-radius: 5px;
+   margin: 5px;
+   padding: 10px;
+   box-shadow: 0 0 10px 2px;
+   color: #2e2e2e;
 }
+
 
 .button-grid, .controls {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    gap: 10px
+   display: grid;
+   grid-template-columns: repeat(2, auto);
+   gap: 10px
 }
+
 
 .controls {
-    padding-top: 10px;
+   padding-top: 10px;
 }
+
 
 .btns, .hidden, #home-button, #next-button {
-    font-family: verdana, sans-serif;
-    font-size: larger;
-    color: #2e2e2e;
-    padding: 15px;
-    border: 1px solid #2e2e2e;
-    border-radius: 5px;
-    padding: 5px 10px;
-    background-color: #9BBAF3;
-    text-decoration: none;
+   font-family: verdana, sans-serif;
+   font-size: larger;
+   color: #2e2e2e;
+   padding: 15px;
+   border: 1px solid #2e2e2e;
+   border-radius: 5px;
+   padding: 5px 10px;
+   background-color: #9BBAF3;
+   text-decoration: none;
 }
+
 
 a:hover {
-    background-color: #C7E0F2;
-    transform: scale(.75);
-    text-decoration: none;
+   background-color: #C7E0F2;
+   transform: scale(.75);
+   text-decoration: none;
 }
+
+
+button:hover {
+   background-color: #C7E0F2;
+   transform: scale(.75);
+}
+
 
 .btns.correct {
-    background-color: #96D494;
+   background-color: #96D494;
 }
+
 
 .btns.wrong {
-    background-color: #FF6B5E;
+   background-color: #FF6B5E;
 }
+
 
 .menu {
-    margin: 20px 0;
+   margin: 20px 0;
 }
+
 
 .hidden {
-    display: none;
+   display: none;
 }
 
+
 #leaderboard-button {
-    font-family: verdana, sans-serif;
-    font-size: larger;
-    color: #2e2e2e;
-    padding: 15px;
-    border: 1px solid #2e2e2e;
-    border-radius: 5px;
-    padding: 5px 10px;
-    background-color: #FFDD57;
+   font-family: verdana, sans-serif;
+   font-size: larger;
+   color: #2e2e2e;
+   padding: 15px;
+   border: 1px solid #2e2e2e;
+   border-radius: 5px;
+   padding: 5px 10px;
+   background-color: #FFDD57;
+   text-decoration: none;
 }
+
+
+a {
+   text-align: center;
+}
+
+
+/* heads up display */
+
+
+#heads-up-display {
+   display: flex;
+   justify-content: space-between;
+}
+
+
+.hud-prefix {
+   text-align: center;
+   font-size: 30px;
+}
+
+
+.hud-main-text {
+   text-align: center;
+}
+
