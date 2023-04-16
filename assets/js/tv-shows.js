@@ -1,11 +1,9 @@
 // elements for TvShows Trivia
 const startTvShowsButton = document.getElementById('1-tv-shows')
 const nextTvShowsButton = document.getElementById('next-button')
-const tvShowsQuestionContainerElement = document.getElementById
-('answer-buttons')
+const tvShowsQuestionContainerElement = document.getElementById('answer-buttons')
 const tvShowsQuestionElement = document.getElementById('question')
-const tvShowsAnswerButtonsElement = document.getElementById
-('answer-buttons')
+const tvShowsAnswerButtonsElement = document.getElementById('answer-buttons')
 
 let shuffledTvShowsQuestions, currentTvShowsQuestionIndex
 
@@ -19,7 +17,7 @@ nextTvShowsButton.addEventListener('click', () => {
 function startTvShowsGame() {
     startTvShowsButton.classList.add('hidden')
     shuffledTvShowsQuestions = tvShowsQuestions.sort(() => Math.random() - .5)
-    currentTvShowsQuestionIndex = 0
+    currentTvShowsQuestionIndex = 1
     tvShowsQuestionContainerElement.classList.remove('hidden')
     setNextTvShowsQuestion()
 }
@@ -53,11 +51,11 @@ function tvShowsReset() {
 function selectTvShowsAnswer(e) {
     const selectedTvShowsButton = e.target
     const correctTvShows = selectedTvShowsButton.dataset.correct
-    setTvShowsStatatusClass(document.body, correct)
+    setTvShowsStatatusClass(document.body, correctTvShows)
     Array.from(tvShowsAnswerButtonsElement.children).forEach(button => {
         setTvShowsStatatusClass(button, button.dataset.correct)
     })
-    if (shuffledTvShowsQuestions > currentTvShowsQuestionIndex + 1) {
+    if (shuffledTvShowsQuestions.length > currentTvShowsQuestionIndex + 1) {
         nextTvShowsButton.classList.remove('hidden')
     } else {
         startTvShowsButton.innerText = 'Restart'

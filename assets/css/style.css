@@ -37,7 +37,7 @@ body {
     padding-top: 10px;
 }
 
-.btns, .hidden {
+.btns, .hidden, #home-button, #next-button {
     font-family: verdana, sans-serif;
     font-size: larger;
     color: #2e2e2e;
@@ -48,7 +48,7 @@ body {
     background-color: #9BBAF3;
 }
 
-button:hover {
+a:hover {
     background-color: #C7E0F2;
     transform: scale(.75);
 }
@@ -67,4 +67,15 @@ button:hover {
 
 .hidden {
     display: none;
+}
+
+#leaderboard-button {
+    font-family: verdana, sans-serif;
+    font-size: larger;
+    color: #2e2e2e;
+    padding: 15px;
+    border: 1px solid #2e2e2e;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: #FFDD57;
 }

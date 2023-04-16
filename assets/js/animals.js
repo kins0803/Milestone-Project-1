@@ -1,25 +1,25 @@
 // elements for Animal Trivia
-const startAnimalButton = document.getElementById('1-animals')
-const nextAnimalButton = document.getElementById('next-button')
-const animalQuestionContainerElement = document.getElementById
-('answer-buttons')
+const animalStartButton = document.getElementById('1-animals')
+const animalNextButton = document.getElementById('next-button')
+const animalQuestionContainerElement = document.getElementById('answer-buttons')
 const animalQuestionElement = document.getElementById('question')
-const animalAnswerButtonsElement = document.getElementById
-('answer-buttons')
+const animalAnswerButtonsElement = document.getElementById('answer-buttons')
+const animalLeaderboardButton = document.getElementById('leaderboard-button')
+const animalHomeButton = document.getElementById('home-button')
 
 let shuffledAnimalQuestions, currentAnimalQuestionIndex
 
-startAnimalButton.addEventListener('click', startAnimalGame)
-nextAnimalButton.addEventListener('click', () => {
+animalStartButton.addEventListener('click', startAnimalGame)
+animalNextButton.addEventListener('click', () => {
     currentAnimalQuestionIndex++
     setNextAnimalQuestion()
 })
 
 // functions for Animal Trivia
 function startAnimalGame() {
-    startAnimalButton.classList.add('hidden')
+    animalStartButton.classList.add('hidden')
     shuffledAnimalQuestions = animalQuestions.sort(() => Math.random() - .5)
-    currentAnimalQuestionIndex = 0
+    currentAnimalQuestionIndex = 1
     animalQuestionContainerElement.classList.remove('hidden')
     setNextAnimalQuestion()
 }
@@ -44,7 +44,7 @@ function showAnimalQuestion(question) {
 }
 
 function animalReset() {
-    nextAnimalButton.classList.add('hidden')
+    animalNextButton.classList.add('hidden')
     while (animalAnswerButtonsElement.firstChild) {
         animalAnswerButtonsElement.removeChild(animalAnswerButtonsElement.firstChild)
     }
@@ -53,15 +53,16 @@ function animalReset() {
 function selectAnimalAnswer(e) {
     const selectedAnimalButton = e.target
     const correctAnimal = selectedAnimalButton.dataset.correct
-    setAnimalStatatusClass(document.body, correct)
+    setAnimalStatatusClass(document.body, correctAnimal)
     Array.from(animalAnswerButtonsElement.children).forEach(button => {
         setAnimalStatatusClass(button, button.dataset.correct)
     })
-    if (shuffledAnimalQuestions > currentAnimalQuestionIndex + 1) {
-        nextAnimalButton.classList.remove('hidden')
+    if (shuffledAnimalQuestions.length > currentAnimalQuestionIndex + 1) {
+        animalNextButton.classList.remove('hidden')
     } else {
-        startAnimalButton.innerText = 'Restart'
-        startAnimalButton.classList.remove('hidden')
+        console.log('hello')
+        animalLeaderboardButton.classList.remove('hidden')
+        animalHomeButton.classList.remove('hidden')
     }
 }
 
@@ -77,7 +78,6 @@ function setAnimalStatatusClass(element, correct) {
 function clearAnimalStatusClass(element) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
-
 }
 
 // questions for Animal Trivia

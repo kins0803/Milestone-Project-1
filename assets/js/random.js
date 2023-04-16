@@ -19,7 +19,7 @@ nextRandomButton.addEventListener('click', () => {
 function startRandomGame() {
     startRandomButton.classList.add('hidden')
     shuffledRandomQuestions = randomQuestions.sort(() => Math.random() - .5)
-    currentRandomQuestionIndex = 0
+    currentRandomQuestionIndex = 1
     randomQuestionContainerElement.classList.remove('hidden')
     setNextRandomQuestion()
 }
@@ -53,11 +53,11 @@ function randomReset() {
 function selectRandomAnswer(e) {
     const selectedRandomButton = e.target
     const correctRandom = selectedRandomButton.dataset.correct
-    setRandomStatatusClass(document.body, correct)
+    setRandomStatatusClass(document.body, correctRandom)
     Array.from(randomAnswerButtonsElement.children).forEach(button => {
         setRandomStatatusClass(button, button.dataset.correct)
     })
-    if (shuffledRandomQuestions > currentRandomQuestionIndex + 1) {
+    if (shuffledRandomQuestions.length > currentRandomQuestionIndex + 1) {
         nextRandomButton.classList.remove('hidden')
     } else {
         startRandomButton.innerText = 'Restart'

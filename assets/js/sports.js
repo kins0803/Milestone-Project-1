@@ -19,7 +19,7 @@ nextSportsButton.addEventListener('click', () => {
 function startSportsGame() {
     startSportsButton.classList.add('hidden')
     shuffledSportsQuestions = sportsQuestions.sort(() => Math.random() - .5)
-    currentSportsQuestionIndex = 0
+    currentSportsQuestionIndex = 1
     sportsQuestionContainerElement.classList.remove('hidden')
     setNextSportsQuestion()
 }
@@ -53,11 +53,11 @@ function sportsReset() {
 function selectSportsAnswer(e) {
     const selectedSportsButton = e.target
     const correctSports = selectedSportsButton.dataset.correct
-    setSportsStatatusClass(document.body, correct)
+    setSportsStatatusClass(document.body, correctSports)
     Array.from(sportsAnswerButtonsElement.children).forEach(button => {
         setSportsStatatusClass(button, button.dataset.correct)
     })
-    if (shuffledSportsQuestions > currentSportsQuestionIndex + 1) {
+    if (shuffledSportsQuestions.length > currentSportsQuestionIndex + 1) {
         nextSportsButton.classList.remove('hidden')
     } else {
         startSportsButton.innerText = 'Restart'
