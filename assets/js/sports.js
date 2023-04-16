@@ -117,26 +117,26 @@ const sportsQuestions = [
     {
         question: 'Who has the all time leading score in the nba?',
         answers: [
-            { text: 'LeBron James', correct: true},
             { text: 'Kobe Bryant', correct: false},
             { text: 'Michael Jordan', correct: false},
+            { text: 'LeBron James', correct: true},
             { text: 'Stephen Curry', correct: false}
         ]
     },
     {
         question: 'Who holds the all-time home run leader in the MLB?',
         answers: [
-            { text: 'Barry Bonds', correct: true},
             { text: 'Mike Trout', correct: false},
             { text: 'Adam Duvall', correct: false},
-            { text: 'Wander Franco', correct: false}
+            { text: 'Wander Franco', correct: false},
+            { text: 'Barry Bonds', correct: true}
         ]
     },
     {
         question: 'Which quarterback has won the most super bowls in the NFL?',
         answers: [
-            { text: 'Tom Brady', correct: true},
             { text: 'Kirk Cousins', correct: false},
+            { text: 'Tom Brady', correct: true},
             { text: 'Aaron Rodgers', correct: false},
             { text: 'Matt Ryan', correct: false}
         ]
@@ -144,9 +144,9 @@ const sportsQuestions = [
     {
         question: 'Which mens college basketball team has won the most national championships in NCAA Divison 1?',
         answers: [
-            { text: 'UCLA', correct: true},
             { text: 'Kentucky', correct: false},
             { text: 'North Carolina', correct: false},
+            { text: 'UCLA', correct: true},
             { text: 'Duke', correct: false}
         ]
     },
@@ -162,24 +162,24 @@ const sportsQuestions = [
     {
         question: 'How many wins by knockout did Mike Tyson have in his professional boxing career?',
         answers: [
-            { text: '44', correct: true},
             { text: '50', correct: false},
             { text: '38', correct: false},
+            { text: '44', correct: true},
             { text: '47', correct: false}
         ]
     },
     {
         question: ' Who has won more tennis grand slam titles, Venus Williams or Serena Williams?',
         answers: [
-            { text: 'Serena Williams', correct: true},
-            { text: 'Venus Williams', correct: false}
+            { text: 'Venus Williams', correct: false},
+            { text: 'Serena Williams', correct: true}
         ]
     },
     {
         question: 'What country has competed the most times in the Summer Olympics yet has not won a gold medal?',
         answers: [
-            { text: 'The Philippines', correct: true},
             { text: 'America', correct: false},
+            { text: 'The Philippines', correct: true},
             { text: 'Brazil', correct: false},
             { text: 'Australia', correct: false}
         ]
@@ -187,19 +187,19 @@ const sportsQuestions = [
     {
         question: 'What is the national sport of Canada?',
         answers: [
-            { text: 'Lacrosse', correct: true},
             { text: 'Hockey', correct: false},
             { text: 'Figure Skating', correct: false},
+            { text: 'Lacrosse', correct: true},
             { text: 'Baseball', correct: false}
         ]
     },
     {
         question: 'How many times has UCLA won the mens Division 1 NCAA national championships?',
         answers: [
-            { text: '11', correct: true},
             { text: '13', correct: false},
             { text: '9', correct: false},
-            { text: '7', correct: false}
+            { text: '7', correct: false},
+            { text: '11', correct: true}
         ]
     }
 ]

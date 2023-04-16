@@ -117,8 +117,8 @@ const tvShowsQuestions = [
     {
         question: 'What is the name of the main character in the show Psych?',
         answers: [
-            { text: 'Shawn', correct: true},
             { text: 'Gus', correct: false},
+            { text: 'Shawn', correct: true},
             { text: 'Henry', correct: false},
             { text: 'Juliet', correct: false}
         ]
@@ -126,24 +126,24 @@ const tvShowsQuestions = [
     {
         question: 'What season did Monica and Chandler get married in Friends?',
         answers: [
-            { text: 'Season 7', correct: true},
             { text: 'Season 5', correct: false},
             { text: 'Season 6', correct: false},
+            { text: 'Season 7', correct: true},
             { text: 'Season 10', correct: false}
         ]
     },
     {
         question: 'Did Sheldon ever win a Nobel prize in the show the Big Bang Theory?',
         answers: [
-            { text: 'Yes', correct: true},
-            { text: 'No', correct: false}
+            { text: 'No', correct: false},
+            { text: 'Yes', correct: true}
         ]
     },
     {
         question: 'In the anime One Piece the main protagonist are pirates, what is the name of the pirate crew?',
         answers: [
-            { text: 'Strawhat Pirates', correct: true},
             { text: 'Heart Pirates', correct: false},
+            { text: 'Strawhat Pirates', correct: true},
             { text: 'Kid Pirates', correct: false},
             { text: 'Red Hair Pirates', correct: false}
         ]
@@ -151,28 +151,28 @@ const tvShowsQuestions = [
     {
         question: 'Who played Captain Ray Holt in the show Brooklyn Nine-Nine?',
         answers: [
-            { text: 'Andre Braugher', correct: true},
             { text: 'Terry Crews', correct: false},
             { text: 'Andy Samburg', correct: false},
-            { text: 'Joe Lo Truglio', correct: false}
+            { text: 'Joe Lo Truglio', correct: false},
+            { text: 'Andre Braugher', correct: true}
         ]
     },
     {
         question: 'Where does Michael Scott move to start his new life with Holly in the Office?',
         answers: [
-            { text: 'Boulder, Colorado', correct: true},
             { text: 'Boone, North Carolina', correct: false},
             { text: 'Bozeman, Montana', correct: false},
+            { text: 'Boulder, Colorado', correct: true},
             { text: 'Enid, Oklahoma', correct: false}
         ]
     },
     {
         question: 'When did Sheldon meet Amy in the Big Bang Theory?',
         answers: [
-            { text: 'Season 3', correct: true},
             { text: 'Season 2', correct: false},
             { text: 'Season 4', correct: false},
-            { text: 'Season 5', correct: false}
+            { text: 'Season 5', correct: false},
+            { text: 'Season 3', correct: true}
         ]
     },
     {
@@ -187,17 +187,17 @@ const tvShowsQuestions = [
     {
         question: 'What is the name of Captain Ray Holts husband in Brooklyn Nine-Nine?',
         answers: [
-            { text: 'Kevin', correct: true},
             { text: 'Jake', correct: false},
             { text: 'David', correct: false},
+            { text: 'Kevin', correct: true},
             { text: 'Michael', correct: false}
         ]
     },
     {
         question: 'What season did Howard and Bernadette have their first child in the Big Bang Theory?',
         answers: [
-            { text: 'Season 9', correct: true},
             { text: 'Season 7', correct: false},
+            { text: 'Season 9', correct: true},
             { text: 'Season 5', correct: false},
             { text: 'Season 11', correct: false}
         ]

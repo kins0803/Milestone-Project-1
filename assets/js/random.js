@@ -124,55 +124,55 @@ const randomQuestions = [
     {
         question: 'Who cursed Medusa to turn into a monster?',
         answers: [
+            { text: 'Aphrodite', correct: false},
             { text: 'Athena', correct: true},
             { text: 'Persephone', correct: false},
-            { text: 'Aphrodite', correct: false},
             { text: 'Poseidon', correct: false}
         ]
     },
     {
         question: 'What is the nail polish brand created by simply nail logical, a YouTuber?',
         answers: [
-            { text: 'Holo Taco', correct: true},
             { text: 'Beyond Polish', correct: false},
             { text: 'Cupcake Polish', correct: false},
+            { text: 'Holo Taco', correct: true},
             { text: 'Cirque Colors', correct: false}
         ]
     },
     {
         question: 'What is the name of the character that died in the book One of Us is Lying?',
         answers: [
-            { text: 'Simon', correct: true},
             { text: 'Addy', correct: false},
             { text: 'Nate', correct: false},
-            { text: 'Bronwyn', correct: false}
+            { text: 'Bronwyn', correct: false},
+            { text: 'Simon', correct: true}
         ]
     },
     {
         question: 'Who wrote the book Matched?',
         answers: [
-            { text: 'Ally Condie', correct: true},
             { text: 'Karen M. McManus', correct: false},
             { text: 'Fran Hauser', correct: false},
+            { text: 'Ally Condie', correct: true},
             { text: 'JK Rowling', correct: false}
         ]
     },
     {
         question: 'Who is the founder of Apple?',
         answers: [
-            { text: 'Steve Jobs', correct: true},
             { text: 'Mark Zuckerberg', correct: false},
             { text: 'Jeff Bezos', correct: false},
+            { text: 'Steve Jobs', correct: true},
             { text: 'Bill Gates', correct: false}
         ]
     },
     {
         question: 'Who was the 16th president of the United States?',
         answers: [
-            { text: 'Abraham Lincoln', correct: true},
             { text: 'Andrew Johnson', correct: false},
             { text: 'James Buchanan', correct: false},
-            { text: 'Andrew Jackson', correct: false}
+            { text: 'Andrew Jackson', correct: false},
+            { text: 'Abraham Lincoln', correct: true}
         ]
     },
     {
@@ -187,18 +187,18 @@ const randomQuestions = [
     {
         question: 'What guide is Sting the master of in Fairy Tail?',
         answers: [
-            { text: 'Sabertooth', correct: true},
             { text: 'Blue Pegasus', correct: false},
             { text: 'Fairy Tail', correct: false},
+            { text: 'Sabertooth', correct: true},
             { text: 'Lamia Scale', correct: false}
         ]
     },
     {
         question: 'Is Marijuana legal in North Carolina?',
         answers: [
-            { text: 'Yes fully legal, above the legal age', correct: true},
             { text: 'Not at all', correct: false},
             { text: 'Yes, for medical use', correct: false},
+            { text: 'Yes fully legal, above the legal age', correct: true},
             { text: 'Yes, but only some strands', correct: false}
         ]
     }
