@@ -1,82 +1,116 @@
 // elements for TvShows Trivia
-const startTvShowsButton = document.getElementById('1-tv-shows')
-const nextTvShowsButton = document.getElementById('next-button')
+const tvShowsStartButton = document.getElementById('1-tvShows')
+const tvShowsNextButton = document.getElementById('next-button')
 const tvShowsQuestionContainerElement = document.getElementById('answer-buttons')
 const tvShowsQuestionElement = document.getElementById('question')
 const tvShowsAnswerButtonsElement = document.getElementById('answer-buttons')
+// const tvShowsLeaderboardButton = document.getElementById('leaderboard-button')
+const tvShowsHomeButton = document.getElementById('home-button')
+const tvShowsQuestionCounterText = document.getElementById('question-counter')
+const tvShowsScoreText = document.getElementById('score')
+
 
 let shuffledTvShowsQuestions, currentTvShowsQuestionIndex
 
-startTvShowsButton.addEventListener('click', startTvShowsGame)
-nextTvShowsButton.addEventListener('click', () => {
-    currentTvShowsQuestionIndex++
-    setNextTvShowsQuestion()
+
+tvShowsStartButton.addEventListener('click', startTvShowsGame)
+tvShowsNextButton.addEventListener('click', () => {
+   currentTvShowsQuestionIndex++
+   setNextTvShowsQuestion()
 })
+
+
+let tvShowsScore = 0
+let tvShowsQuestionCounter = 0
+
+
+const CORRECT_BONUS = 10;
+const MAX_QUESTIONS = 10;
+
 
 // functions for TvShows Trivia
 function startTvShowsGame() {
-    startTvShowsButton.classList.add('hidden')
-    shuffledTvShowsQuestions = tvShowsQuestions.sort(() => Math.random() - .5)
-    currentTvShowsQuestionIndex = 1
-    tvShowsQuestionContainerElement.classList.remove('hidden')
-    setNextTvShowsQuestion()
+   tvShowsScore = 0
+//    tvShowsQuestionCounterText.innerText = tvShowsQuestionCounter + `${tvShowsQuestionCounter}/${MAX_QUESTIONS}`
+   tvShowsStartButton.classList.add('hidden')
+   shuffledTvShowsQuestions = tvShowsQuestions.sort(() => Math.random() - .5)
+   currentTvShowsQuestionIndex = 1
+   tvShowsQuestionContainerElement.classList.remove('hidden')
+   setNextTvShowsQuestion()
 }
+
 
 function setNextTvShowsQuestion() {
-    tvShowsReset()
-    showTvShowsQuestion(shuffledTvShowsQuestions[currentTvShowsQuestionIndex])
+   tvShowsReset()
+   showTvShowsQuestion(shuffledTvShowsQuestions[currentTvShowsQuestionIndex])
 }
+
 
 function showTvShowsQuestion(question) {
-    tvShowsQuestionElement.innerText = question.question
-    question.answers.forEach(answer => {
-        const button = document.createElement('button')
-        button.innerText = answer.text
-        button.classList.add('btns')
-        if (answer.correct) {
-            button.dataset.correct = answer.correct
-        }
-        button.addEventListener('click', selectTvShowsAnswer)
-        tvShowsAnswerButtonsElement.appendChild(button)
-    })
+   tvShowsQuestionElement.innerText = question.question
+   question.answers.forEach(answer => {
+       const button = document.createElement('button')
+       button.innerText = answer.text
+       button.classList.add('btns')
+       if (answer.correct) {
+           button.dataset.correct = answer.correct
+       }
+       button.addEventListener('click', selectTvShowsAnswer)
+       tvShowsAnswerButtonsElement.appendChild(button)
+   })
 }
+
 
 function tvShowsReset() {
-    nextTvShowsButton.classList.add('hidden')
-    while (tvShowsAnswerButtonsElement.firstChild) {
-        tvShowsAnswerButtonsElement.removeChild(tvShowsAnswerButtonsElement.firstChild)
-    }
+   tvShowsNextButton.classList.add('hidden')
+   while (tvShowsAnswerButtonsElement.firstChild) {
+       tvShowsAnswerButtonsElement.removeChild(tvShowsAnswerButtonsElement.firstChild)
+   }
 }
+
 
 function selectTvShowsAnswer(e) {
-    const selectedTvShowsButton = e.target
-    const correctTvShows = selectedTvShowsButton.dataset.correct
-    setTvShowsStatatusClass(document.body, correctTvShows)
-    Array.from(tvShowsAnswerButtonsElement.children).forEach(button => {
-        setTvShowsStatatusClass(button, button.dataset.correct)
-    })
-    if (shuffledTvShowsQuestions.length > currentTvShowsQuestionIndex + 1) {
-        nextTvShowsButton.classList.remove('hidden')
-    } else {
-        startTvShowsButton.innerText = 'Restart'
-        startTvShowsButton.classList.remove('hidden')
-    }
+   const selectedTvShowsButton = e.target
+   const correctTvShows = selectedTvShowsButton.dataset.correct
+   setTvShowsScore(document.body, correctTvShows)
+   Array.from(tvShowsAnswerButtonsElement.children).forEach(button => {
+       setTvShowsStatatusClass(button, button.dataset.correct)
+   })
+   if (shuffledTvShowsQuestions.length > currentTvShowsQuestionIndex + 1) {
+       tvShowsNextButton.classList.remove('hidden')
+   } else {
+    //    tvShowsLeaderboardButton.classList.remove('hidden')
+       tvShowsHomeButton.classList.remove('hidden')
+   }
 }
+
+function setTvShowsScore(element, correct) {
+   if (correct) {
+       incrementScore()
+   }
+}
+
 
 function setTvShowsStatatusClass(element, correct) {
-    clearTvShowsStatusClass(element)
-    if (correct) {
-        element.classList.add('correct')
-    } else {
-        element.classList.add('wrong')
-    }
+   clearTvShowsStatusClass(element)
+   if (correct) {
+       element.classList.add('correct')
+   } else {
+       element.classList.add('wrong')
+   }
 }
+
 
 function clearTvShowsStatusClass(element) {
-    element.classList.remove('correct')
-    element.classList.remove('wrong')
-
+   element.classList.remove('correct')
+   element.classList.remove('wrong')
 }
+
+
+function incrementScore() {
+   tvShowsScore += CORRECT_BONUS;
+   tvShowsScoreText.innerText = tvShowsScore;
+};
 
 // questions for TvShows Trivia
 const tvShowsQuestions = [

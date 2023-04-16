@@ -6,22 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sports Trivia</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <script defer src="/assets/js/sports.js"></script>
+    <script defer src="assets/js/sports.js"></script>
     <script src="https://kit.fontawesome.com/4f69e1f474.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container">
+        <div id="heads-up-display">
+            <!-- <div id="question-number">
+              <p class="hud-prefix">
+                Question
+              </p>
+              <h1 class="hud-main-text" id="question-counter"></h1>
+            </div> -->
+            <div id="score-counter">
+              <p class="hud-prefix">
+                Score
+              </p>
+              <h1 class="hud-main-text" id="score"></h1>
+            </div>
+        </div> 
         <h1>Trivia Jumble</h1>
-        <h2>Sports Questions</h2>
+        <h2 id="question">Sports Trivia</h2>
             <div id="answer-buttons" class="button-grid">
-                <button class="btns">Answer 1</button>
-                <button class="btns">Answer 2</button>
-                <button class="btns">Answer 3</button>
-                <button class="btns">Answer 4</button>
-            </div>
+                <button id="1-sports" class="btns">Start</button>
+            </div> 
             <div class="controls">
-                <button class="hidden"></button>
-            </div>
+                <a id="home-button" class="hidden" href="home.html">Home <i class="fa-solid fa-house" style="color: #2e2e2e;"></i></a>
+                <button id="next-button" class="hidden">Next <i class="fa-solid fa-circle-right" style="color: #2e2e2e;"></i></button>
+                <!-- <a id="leaderboard-button" class="hidden" href="leaderboard.html">Leaderboard <i class="fa-solid fa-star" style="color: #2e2e2e;"></i></a> -->
+        </div>
     </div>
 </body>
 </html>

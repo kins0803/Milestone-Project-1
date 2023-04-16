@@ -89,7 +89,7 @@ button:hover {
 }
 
 
-#leaderboard-button {
+#leaderboard-button, #home-button {
    font-family: verdana, sans-serif;
    font-size: larger;
    color: #2e2e2e;

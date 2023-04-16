@@ -1,84 +1,116 @@
 // elements for Random Trivia
-const startRandomButton = document.getElementById('1-random')
-const nextRandomButton = document.getElementById('next-button')
-const randomQuestionContainerElement = document.getElementById
-('answer-buttons')
+const randomStartButton = document.getElementById('1-randoms')
+const randomNextButton = document.getElementById('next-button')
+const randomQuestionContainerElement = document.getElementById('answer-buttons')
 const randomQuestionElement = document.getElementById('question')
-const randomAnswerButtonsElement = document.getElementById
-('answer-buttons')
+const randomAnswerButtonsElement = document.getElementById('answer-buttons')
+// const randomLeaderboardButton = document.getElementById('leaderboard-button')
+const randomHomeButton = document.getElementById('home-button')
+const randomQuestionCounterText = document.getElementById('question-counter')
+const randomScoreText = document.getElementById('score')
+
 
 let shuffledRandomQuestions, currentRandomQuestionIndex
 
-startRandomButton.addEventListener('click', startRandomGame)
-nextRandomButton.addEventListener('click', () => {
-    currentRandomQuestionIndex++
-    setNextRandomQuestion()
+
+randomStartButton.addEventListener('click', startRandomGame)
+randomNextButton.addEventListener('click', () => {
+   currentRandomQuestionIndex++
+   setNextRandomQuestion()
 })
+
+
+let randomScore = 0
+let randomQuestionCounter = 0
+
+
+const CORRECT_BONUS = 10;
+const MAX_QUESTIONS = 10;
+
 
 // functions for Random Trivia
 function startRandomGame() {
-    startRandomButton.classList.add('hidden')
-    shuffledRandomQuestions = randomQuestions.sort(() => Math.random() - .5)
-    currentRandomQuestionIndex = 1
-    randomQuestionContainerElement.classList.remove('hidden')
-    setNextRandomQuestion()
+   randomScore = 0
+//    randomQuestionCounterText.innerText = randomQuestionCounter + `${randomQuestionCounter}/${MAX_QUESTIONS}`
+   randomStartButton.classList.add('hidden')
+   shuffledRandomQuestions = randomQuestions.sort(() => Math.random() - .5)
+   currentRandomQuestionIndex = 1
+   randomQuestionContainerElement.classList.remove('hidden')
+   setNextRandomQuestion()
 }
+
 
 function setNextRandomQuestion() {
-    randomReset()
-    showRandomQuestion(shuffledRandomQuestions[currentRandomQuestionIndex])
+   randomReset()
+   showRandomQuestion(shuffledRandomQuestions[currentRandomQuestionIndex])
 }
+
 
 function showRandomQuestion(question) {
-    randomQuestionElement.innerText = question.question
-    question.answers.forEach(answer => {
-        const button = document.createElement('button')
-        button.innerText = answer.text
-        button.classList.add('btns')
-        if (answer.correct) {
-            button.dataset.correct = answer.correct
-        }
-        button.addEventListener('click', selectRandomAnswer)
-        randomAnswerButtonsElement.appendChild(button)
-    })
+   randomQuestionElement.innerText = question.question
+   question.answers.forEach(answer => {
+       const button = document.createElement('button')
+       button.innerText = answer.text
+       button.classList.add('btns')
+       if (answer.correct) {
+           button.dataset.correct = answer.correct
+       }
+       button.addEventListener('click', selectRandomAnswer)
+       randomAnswerButtonsElement.appendChild(button)
+   })
 }
+
 
 function randomReset() {
-    nextRandomButton.classList.add('hidden')
-    while (randomAnswerButtonsElement.firstChild) {
-        randomAnswerButtonsElement.removeChild(randomAnswerButtonsElement.firstChild)
-    }
+   randomNextButton.classList.add('hidden')
+   while (randomAnswerButtonsElement.firstChild) {
+       randomAnswerButtonsElement.removeChild(randomAnswerButtonsElement.firstChild)
+   }
 }
+
 
 function selectRandomAnswer(e) {
-    const selectedRandomButton = e.target
-    const correctRandom = selectedRandomButton.dataset.correct
-    setRandomStatatusClass(document.body, correctRandom)
-    Array.from(randomAnswerButtonsElement.children).forEach(button => {
-        setRandomStatatusClass(button, button.dataset.correct)
-    })
-    if (shuffledRandomQuestions.length > currentRandomQuestionIndex + 1) {
-        nextRandomButton.classList.remove('hidden')
-    } else {
-        startRandomButton.innerText = 'Restart'
-        startRandomButton.classList.remove('hidden')
-    }
+   const selectedRandomButton = e.target
+   const correctRandom = selectedRandomButton.dataset.correct
+   setRandomScore(document.body, correctRandom)
+   Array.from(randomAnswerButtonsElement.children).forEach(button => {
+       setRandomStatatusClass(button, button.dataset.correct)
+   })
+   if (shuffledRandomQuestions.length > currentRandomQuestionIndex + 1) {
+       randomNextButton.classList.remove('hidden')
+   } else {
+    //    randomLeaderboardButton.classList.remove('hidden')
+       randomHomeButton.classList.remove('hidden')
+   }
 }
+
+function setRandomScore(element, correct) {
+   if (correct) {
+       incrementScore()
+   }
+}
+
 
 function setRandomStatatusClass(element, correct) {
-    clearRandomStatusClass(element)
-    if (correct) {
-        element.classList.add('correct')
-    } else {
-        element.classList.add('wrong')
-    }
+   clearRandomStatusClass(element)
+   if (correct) {
+       element.classList.add('correct')
+   } else {
+       element.classList.add('wrong')
+   }
 }
+
 
 function clearRandomStatusClass(element) {
-    element.classList.remove('correct')
-    element.classList.remove('wrong')
-
+   element.classList.remove('correct')
+   element.classList.remove('wrong')
 }
+
+
+function incrementScore() {
+   randomScore += CORRECT_BONUS;
+   randomScoreText.innerText = randomScore;
+};
 
 // questions for Random Trivia
 const randomQuestions = [
