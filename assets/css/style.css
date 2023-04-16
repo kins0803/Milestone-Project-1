@@ -46,11 +46,13 @@ body {
     border-radius: 5px;
     padding: 5px 10px;
     background-color: #9BBAF3;
+    text-decoration: none;
 }
 
 a:hover {
     background-color: #C7E0F2;
     transform: scale(.75);
+    text-decoration: none;
 }
 
 .btns.correct {
