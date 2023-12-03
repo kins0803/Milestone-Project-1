@@ -1,0 +1,21 @@
+@import "config";
+
+a button .hidden {
+    @include set-bg($btn-background-color);
+    border-radius: 5px;
+    padding: 5px 10px;
+    border: 1px solid ($primary-font-color);
+
+    &:hover{
+        @include set-bg($highlight-color);
+        transform: scale(.80);
+    }
+}
+
+.btns.correct {
+    @include set-bg($correct-color);
+ }
+
+.btns.wrong {
+    @include set-bg($wrong-color);
+ }

@@ -1,0 +1,12 @@
+@import "config";
+
+.container {
+    @include set-bg($secondary-background-color);
+    display: flex;
+    align-items: center;
+
+    .button-grid {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+    }
+}

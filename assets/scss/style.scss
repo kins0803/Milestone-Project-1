@@ -1,0 +1,19 @@
+@import "btnConfig";
+@import "config";
+@import "menuConfig";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $primary-background-color;
+    font-family: $font-stack;
+}
+
+.hero {
+    @include set-bg($primary-background-color);
+    align-items: center;
+}
